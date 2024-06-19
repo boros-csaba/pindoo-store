@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -97,7 +98,7 @@ export default function Home() {
             </aside>
             <nav className="flex flex-col items-start gap-1">
               <a className="link link-hover" href="#">Adatnyilatkozat</a>
-              <a className="link link-hover" href="#">Általános szerződési feltételek</a>
+              <Link className="link link-hover" href="/aszf">Általános szerződési feltételek</Link>
             </nav>
           </div>
         </footer>
