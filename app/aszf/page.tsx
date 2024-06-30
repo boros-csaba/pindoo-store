@@ -673,9 +673,9 @@ export default function AszfPage() {
       <br />
       Ha megfelelőnek tartja a kosárban elhelyezett termékek mennyiségét,
       leellenőrizte a végösszeget, és úgy döntött, hogy meg szeretné vásárolni
-      őket, akkor egyszerűen kattintson a "Megrendelem" gombra. Ezt követően egy
+      őket, akkor egyszerűen kattintson a &quot;Megrendelem&quot; gombra. Ezt követően egy
       Önnek megfelelő fizetési módot kell választania. Ha egyetért a megrendelés
-      tartalmával, akkor a megrendelés elküldéséhez kattintson a „Megrendelem”
+      tartalmával, akkor a megrendelés elküldéséhez kattintson a &quot;Megrendelem&quot;
       gombra.
       <br />
       <br />
@@ -683,7 +683,7 @@ export default function AszfPage() {
       <br />
       Amennyiben Ön meggyőződött arról, hogy a kosár tartalma megfelel az Ön
       által megrendelni kívánt termékeknek, valamint az Ön adatai helyesen
-      szerepelnek, úgy a „Megrendelés” gombra kattintva zárhatja le
+      szerepelnek, úgy a &quot;Megrendelés&quot; gombra kattintva zárhatja le
       megrendelését. A honlapon közölt információk nem minősülnek az Eladó
       részéről szerződés megkötésére vonatkozó ajánlatnak. A jelen ÁSZF hatálya
       alá tartozó megrendelések esetén Ön minősül ajánlattevőnek. Ön a
@@ -749,8 +749,7 @@ export default function AszfPage() {
           illetékes postán. Azt hogy a kézbesítés napján a futár milyen
           időpontban érkezik, minden esetben a futár napi útvonalától függ,
           előre nem lehet megmondani. A Posta esetében nem lehetséges
-          telefonszámot vagy egyéb megjegyzést adni a futárnak. A szállítás díja
-          @Helper.GetFormattedMoney(Settings.GLS_CSOMAGPONT_SHIPPING_PRICE(false))
+          telefonszámot vagy egyéb megjegyzést adni a futárnak. 
           Ft.
         </li>
         <li>
@@ -759,8 +758,7 @@ export default function AszfPage() {
           önnek a csomag feladásáról, illetve a kézbesítés előtt 1 órával ismét
           értesíteni fogja önt a futár. A GLS választásával lehetőség van a
           futárnál is fizetni utánvéttel, a számlázási adatoknál az utánvét
-          fizetési mód kiválasztásával. A szállítás díja
-          @Helper.GetFormattedMoney(Settings.GLS_SHIPPING_PRICE(false)) Ft.
+          fizetési mód kiválasztásával.
         </li>
       </ul>
       <br />
