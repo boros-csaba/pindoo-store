@@ -1,8 +1,37 @@
-﻿@{
+﻿@model List<Product>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="flex flex-wrap w-full max-w-[1000px] pt-8 justify-around gap-10">
+
+    @foreach (var product in Model)
+    {
+        <div class="card bg-base-300 shadow-xl">
+            <figure class="bg-base-300">
+                <img src="/images/@product.ImageFileName" alt="Album" width="480" height="400" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">@product.Name</h2>
+
+                <p>@product.Description</p>
+                <div class="flex card-actions justify-end items-center gap-5">
+                    <h2 class="card-title">@product.Price</h2>
+                    <button class="btn btn-secondary" onclick="addToCart(@product.Id)">Kosárba</button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script>
+        function addToCart(id) {
+            $.ajax({
+                url: "/add-to-cart/" + id,
+                method: "POST",
+                success: function (d) {
+                    console.log(d);
+                }
+            });
+        }
+    </script>
 </div>
