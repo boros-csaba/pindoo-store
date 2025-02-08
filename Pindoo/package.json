@@ -1,0 +1,19 @@
+{
+  "name": "pindoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build.css": "npx tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.5"
+  },
+  "devDependencies": {
+    "daisyui": "^5.0.0-beta.7",
+    "tailwindcss": "^4.0.5"
+  }
+}
