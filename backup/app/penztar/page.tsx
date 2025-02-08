@@ -51,6 +51,8 @@ export default function PenztarPage() {
         </div>
         <textarea className="textarea textarea-bordered w-full bg-white" />
       </label>
+
+      <button className="btn btn-primary">Rendelés leadása</button>;
     </div>
   );
 }

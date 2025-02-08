@@ -10,8 +10,6 @@ interface CartState {
 interface CartItem {
   id: string;
   quantity: number;
-  name: string;
-  price: number;
 }
 
 export const CartContext = createContext<CartState | null>(null);
