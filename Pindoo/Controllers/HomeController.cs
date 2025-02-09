@@ -35,9 +35,25 @@ namespace Pindoo.Controllers
             return Ok(cart);
         }
 
-        public IActionResult Privacy()
+        [HttpGet("kosar")]
+        public IActionResult Kosar()
         {
-            return View();
+            var cart = HttpContext.Session.Get<Cart>("cart") ?? new Cart();
+            var cartViewModel = new CartViewModel();
+            var products = _productsService.GetProducts();
+            foreach (var (productId, quantity) in cart.Items)
+            {
+                var product = products.Single(p => p.Id == productId);
+                cartViewModel.Items.Add(new CartViewModel.CartItem
+                {
+                    ProductId = productId,
+                    ProductName = product.Name,
+                    Quantity = quantity,
+                    Price = product.Price,
+                    ImageFileName = product.ImageFileName
+                });
+            }
+            return View(cartViewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
