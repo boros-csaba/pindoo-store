@@ -1660,6 +1660,9 @@
       }
     }
   }
+  .mr-8 {
+    margin-right: calc(var(--spacing) * 8);
+  }
   .fieldset-legend {
     margin-bottom: calc(0.25rem * -1);
     display: flex;
@@ -1669,6 +1672,9 @@
     padding-block: calc(0.25rem * 2);
     color: var(--color-base-content);
     font-weight: 600;
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
   }
   .ml-8 {
     margin-left: calc(var(--spacing) * 8);
@@ -2015,6 +2021,9 @@
   }
   .bg-base-300 {
     background-color: var(--color-base-300);
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
