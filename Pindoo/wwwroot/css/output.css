@@ -1660,9 +1660,6 @@
       }
     }
   }
-  .mr-8 {
-    margin-right: calc(var(--spacing) * 8);
-  }
   .fieldset-legend {
     margin-bottom: calc(0.25rem * -1);
     display: flex;
@@ -1938,14 +1935,8 @@
   .w-\[675px\] {
     width: 675px;
   }
-  .w-\[1280px\] {
-    width: 1280px;
-  }
   .w-full {
     width: 100%;
-  }
-  .max-w-\[1000px\] {
-    max-width: 1000px;
   }
   .max-w-\[1280px\] {
     max-width: 1280px;
@@ -2001,9 +1992,6 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
-  }
   .truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2028,8 +2016,11 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .pt-8 {
-    padding-top: calc(var(--spacing) * 8);
+  .pr-12 {
+    padding-right: calc(var(--spacing) * 12);
+  }
+  .pl-12 {
+    padding-left: calc(var(--spacing) * 12);
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
