@@ -1,4 +1,5 @@
 using Pindoo.Services;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+StripeConfiguration.ApiKey = app.Configuration["Stripe:SecretKey"];
 
 app.UseAuthorization();
 

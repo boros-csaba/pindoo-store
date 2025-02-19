@@ -9,4 +9,8 @@
   <Target Name="BuildCss" BeforeTargets="Compile">
     <Exec Command="npx @tailwindcss/cli -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css --watch" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Stripe.net" Version="47.3.0" />
+  </ItemGroup>
 </Project>

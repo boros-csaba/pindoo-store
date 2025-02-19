@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Pindoo.Models;
 using Pindoo.Services;
+using Stripe.Checkout;
 
 namespace Pindoo.Controllers
 {
@@ -60,6 +61,45 @@ namespace Pindoo.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost("fizetes")]
+        public IActionResult Pay()
+        {
+            var cart = HttpContext.Session.Get<Cart>("cart") ?? new Cart();
+            if (cart.Items.Count == 0)
+            {
+                // todo error handling
+                return RedirectToAction("Kosar");
+            }
+
+            var domain = "https://pindoo.hu";
+            var options = new SessionCreateOptions
+            {
+                // todo
+                SuccessUrl = $"{domain}/rendeles-igazolas",
+                CancelUrl = $"{domain}/kosar",
+                Mode = "payment",
+                PaymentMethodTypes = ["card"],
+                CustomerEmail = "boros.csaba94@gmail.com", //todo
+                LineItems = [.. cart.Items.Select(i => new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions 
+                    {
+                        UnitAmount = 1200000, //todo
+                        Currency = "huf",
+                        ProductData = new SessionLineItemPriceDataProductDataOptions 
+                        {
+                            Name = "Napi rutin tábla", // todo
+                        }
+                    },
+                    Quantity = i.Value
+                })]
+            };
+
+            var service = new SessionService();
+            var session = service.Create(options);
+            return Redirect(session.Url);
         }
     }
 }
